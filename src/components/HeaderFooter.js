@@ -1,11 +1,11 @@
-import { TitleDiv, NavBar, HeaderLink, Footer } from "./StyledComponents";
+import { Title, NavBar, HeaderLink, Footer } from "./StyledComponents";
 import { NavLink, Outlet } from "react-router-dom";
 
 export default function HeaderFooter () {
 
     return (
         <>
-        <TitleDiv>HeaderFooter Component</TitleDiv>
+        <Title>HeaderFooter Component</Title>
         <NavBar>
             <NavLink style={{textDecoration:"none"}} to="/">
                 <HeaderLink>Home</HeaderLink>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // HeaderFooter
 
-export const TitleDiv = styled.h1`
+export const Title = styled.h1`
     background-color: lightgrey;
     font-style: italic;
     text-align: center;
@@ -30,7 +30,7 @@ export const Footer = styled.footer`
 
 // Products
 
-export const ProductsDiv = styled.h2`
+export const SubTitle = styled.h2`
     background-color: lightgrey;
     font-style: italic;
     text-align: center;
