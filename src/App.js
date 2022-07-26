@@ -12,8 +12,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HeaderFooter />}>
             <Route path="/products" element={<Products />} />
-            {/* <Route path="/productdetails" element={<ProductDetails />} />
-            <Route path="/cart" element={<Cart />} /> */}
+            {/* <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
