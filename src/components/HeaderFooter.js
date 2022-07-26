@@ -5,7 +5,7 @@ export default function HeaderFooter () {
 
     return (
         <>
-        <Title>HeaderFooter Component</Title>
+        <Title>Fake API Store</Title>
         <NavBar>
             <NavLink style={{textDecoration:"none"}} to="/">
                 <HeaderLink>Home</HeaderLink>

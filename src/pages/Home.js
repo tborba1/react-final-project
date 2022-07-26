@@ -1,11 +1,8 @@
-// Display the image, title, and price of all products in a list or grid.
-// When a product is clicked, navigate to the detail page for the selected product.
-
 import { useState, useEffect } from "react";
 import { SubTitle } from "../components/StyledComponents";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
-export default function Products () {
+export default function Categories () {
 
     const [categories, setCategories] = useState([]);
     console.log(categories);
