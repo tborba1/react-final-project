@@ -74,8 +74,19 @@ export const ProductBox = styled.div`
     text-align: center;
 `;
 
+export const ProductDetailsBox = styled.div`
+    border: 2px solid black;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+`;
+
 export const ProductContent = styled.div`
     background-color: #B7BF99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const ProductImage = styled.img`
