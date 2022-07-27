@@ -34,7 +34,7 @@ export default function Categories () {
                         categories?.map((category) => (
                             <>
                                 <CategoryBox>
-                                    <div className="content">
+                                    <div>
                                         <h3>{category}</h3>
                                     </div>
                                 </CategoryBox>

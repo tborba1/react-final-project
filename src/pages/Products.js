@@ -6,7 +6,8 @@ import {
     SubTitle, 
     ProductImage,
     ProductContainer,
-    ProductBox 
+    ProductBox,
+    ProductContent 
 } from "../components/StyledComponents";
 import { Outlet } from "react-router-dom";
 
@@ -38,10 +39,12 @@ export default function Products () {
                         products?.map((product) => (
                             <>
                                 <ProductBox>
-                                    <div className="content">
+                                    <div>
                                         <ProductImage src={product.image} />
-                                        <p>${product.price}</p>
-                                        <h5>{product.title}</h5>
+                                        <ProductContent>
+                                            <p>${product.price}</p>
+                                            <h5>{product.title}</h5>
+                                        </ProductContent>
                                     </div>
                                 </ProductBox>
                             </>
