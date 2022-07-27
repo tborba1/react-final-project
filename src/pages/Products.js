@@ -29,7 +29,7 @@ export default function Products () {
 
     return (
         <>
-            <SubTitle>Products:</SubTitle>
+            <SubTitle>Products</SubTitle>
             <ProductContainer>
             {products.map((product) => {
                 return (
@@ -37,8 +37,8 @@ export default function Products () {
                         <ProductBox>
                             <div className="content">
                                 <ProductImage src={product.image} />
+                                <p>${product.price}</p>
                                 <h5>{product.title}</h5>
-                                <p>{product.price}</p>
                             </div>
                         </ProductBox>
                     </>

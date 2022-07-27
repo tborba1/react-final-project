@@ -25,7 +25,7 @@ export default function Categories () {
 
     return (
         <>
-            <SubTitle>Categories:</SubTitle>
+            <SubTitle>Categories</SubTitle>
             <CategoryContainer>
             {categories.map((category) => {
                 return (
