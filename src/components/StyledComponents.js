@@ -83,6 +83,11 @@ export const ProductImage = styled.img`
     height: 100%;
 `;
 
+export const DetailsButton = styled.button`
+    font-family: Nunito;
+    background-color: #C2BB00;
+`;
+
 /* Color Theme Swatches in Hex 
 color: #003547; dark blue
 color: #005E54; teal
