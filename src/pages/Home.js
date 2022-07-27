@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
-import { SubTitle } from "../components/StyledComponents";
-import { Outlet, Link } from "react-router-dom";
+import { 
+    CategoryBox, 
+    CategoryContainer, 
+    SubTitle 
+} from "../components/StyledComponents";
+import { Outlet } from "react-router-dom";
 
 export default function Categories () {
 
@@ -22,19 +26,19 @@ export default function Categories () {
     return (
         <>
             <SubTitle>Categories:</SubTitle>
-            <div className="container">
+            <CategoryContainer>
             {categories.map((category) => {
                 return (
                     <>
-                        <div className="box">
+                        <CategoryBox>
                             <div className="content">
                                 <h3>{category}</h3>
                             </div>
-                        </div>
+                        </CategoryBox>
                     </>
                 )
             })}
-            </div>
+            </CategoryContainer>
             <Outlet />
         </>
     );
