@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HeaderFooter from './components/HeaderFooter';
 import Home from './pages/Home' ;
 import Products from './pages/Products';
+import Cart from './pages/Cart';
 import NotFound from './components/NotFound';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/products" element={<Products />} />
             {/* <Route path="/products/:id" element={<ProductDetails />} /> */}
-            {/* <Route path="/cart" element={<Cart />} /> */}
+            <Route path="/cart" element={<Cart />} />
             {/* <Route path="/checkout" element={<Checkout />} />  */}
             <Route path="*" element={<NotFound />} />
           </Route>
