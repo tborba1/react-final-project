@@ -23,6 +23,9 @@ export default function HeaderFooter () {
             <NavLink to="/cart" style={({ isActive} ) => styleByActiveStatus(isActive)}>
                 <HeaderLink>Cart</HeaderLink>
             </NavLink>
+            <NavLink to="/login" style={({ isActive} ) => styleByActiveStatus(isActive)}>
+                <HeaderLink>Login</HeaderLink>
+            </NavLink>
         </NavBar>
         <Outlet />
         <Footer>

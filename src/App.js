@@ -5,6 +5,7 @@ import Home from './pages/Home' ;
 import Products from './pages/Products';
 import Cart from './pages/Cart';
 import NotFound from './components/NotFound';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             {/* <Route path="/products/:id" element={<ProductDetails />} /> */}
             <Route path="/cart" element={<Cart />} />
             {/* <Route path="/checkout" element={<Checkout />} />  */}
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
