@@ -1,12 +1,6 @@
-import { Title, NavBar, HeaderLink, Footer } from "./StyledComponents";
-import { NavLink, Outlet } from "react-router-dom";
-
-function styleByActiveStatus(isActive) {
-    return isActive
-    ? {fontWeight: "bold", textDecoration: "none", color: "#C2BB00"}
-    : {fontWeight: "normal", textDecoration: "none", color: "white"}
-
-}
+import { Title, NavBar, Footer } from "./StyledComponents";
+import { Outlet } from "react-router-dom";
+import NavLink from "./NavLink";
 
 export default function HeaderFooter () {
 
@@ -14,18 +8,10 @@ export default function HeaderFooter () {
         <>
         <Title>Fake API Store</Title>
         <NavBar>
-            <NavLink to="/" style={({ isActive} ) => styleByActiveStatus(isActive)} >
-                <HeaderLink>Home</HeaderLink>
-            </NavLink>
-            <NavLink to="/products" style={({ isActive} ) => styleByActiveStatus(isActive)}>
-                <HeaderLink>Products</HeaderLink>
-            </NavLink>
-            <NavLink to="/cart" style={({ isActive} ) => styleByActiveStatus(isActive)}>
-                <HeaderLink>Cart</HeaderLink>
-            </NavLink>
-            <NavLink to="/login" style={({ isActive} ) => styleByActiveStatus(isActive)}>
-                <HeaderLink>Login</HeaderLink>
-            </NavLink>
+            <NavLink route="/" label="Home" />
+            <NavLink route="/products" label="Products" />
+            <NavLink route="/cart" label="Cart" />
+            <NavLink route="/login" label="Login" />
         </NavBar>
         <Outlet />
         <Footer>
