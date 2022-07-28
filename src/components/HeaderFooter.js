@@ -1,8 +1,12 @@
 import { Title, NavBar, Footer } from "./StyledComponents";
 import { Outlet } from "react-router-dom";
 import NavLink from "./NavLink";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 export default function HeaderFooter () {
+    
+    const { loggedInUser } = useContext(UserContext);
 
     return (
         <>
@@ -11,7 +15,7 @@ export default function HeaderFooter () {
             <NavLink route="/" label="Home" />
             <NavLink route="/products" label="Products" />
             <NavLink route="/cart" label="Cart" />
-            <NavLink route="/login" label="Login" />
+            {!loggedInUser && <NavLink route="/login" label="Login" />}
         </NavBar>
         <Outlet />
         <Footer>

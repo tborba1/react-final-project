@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import { FormContainer, LoginButton } from "./StyledComponents";
 
 const validUser = {
     id: 1,
@@ -34,14 +35,21 @@ export default function Login () {
     return (
         <>
             <p style={{textAlign: "center"}}>Login Page</p>
-            <form onSubmit={handleSubmit} style={{textAlign: "center"}}>
-                <label for="Email">Email</label>
-                <input name="Email" value={email} onChange={(event) => setEmail(event.target.value)} />
-                <label for="Password">Password</label>
-                <input name="Password" label="Password" value={password} type="password" onChange={(event) => setPassword(event.target.value)} />
-                <button type="submit">Login</button>
-            </form>
-            {showLoginError && <div>User not found.</div>}
+            <FormContainer>
+                <form onSubmit={handleSubmit} style={{textAlign: "center"}}>
+                    <label for="Email">Email</label>
+                    <br></br>
+                    <input name="Email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                    <br></br>
+                    <label for="Password">Password</label>
+                    <br></br>
+                    <input name="Password" label="Password" value={password} type="password" onChange={(event) => setPassword(event.target.value)} />
+                    <br></br>
+                    <LoginButton type="submit">Login</LoginButton>
+                    {showLoginError && <div style={{textAlign:"center", fontWeight:"bold", color:"#E1523D"}}>User not found.</div>}
+                </form>
+            </FormContainer>
+            
         </>
     );
 }

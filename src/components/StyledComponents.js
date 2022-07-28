@@ -99,6 +99,25 @@ export const DetailsButton = styled.button`
     background-color: #C2BB00;
 `;
 
+// Login Form
+
+export const FormContainer = styled.div`
+    background-color: #B7BF99;
+    // width: 50%;
+    // height: 50%;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 50px;
+    border: 2px solid black;  
+`;
+
+export const LoginButton = styled.button`
+    font-family: Nunito;
+    background-color: #005E54;
+    color: white;
+`;
+
+
 /* Color Theme Swatches in Hex 
 color: #003547; dark blue
 color: #005E54; teal
