@@ -29,7 +29,7 @@ export const NavBar = styled.nav`
 
 export const HeaderLink = styled.div`
     margin: 18px 24px;
-    color: white;
+    // color: white;
 `;
 
 export const Footer = styled.footer`
