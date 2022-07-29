@@ -93,7 +93,7 @@ export const ProductDetailsBox = styled.div`
 `;
 
 export const ProductContent = styled.div`
-  background-color: #b7bf99;
+  // background-color: #b7bf99;
   display: flex;
   flex-direction: column;
   align-items: center;
