@@ -3,7 +3,7 @@
 // Display an "Add to Cart" button
 // When the "Add to Cart" button is clicked, the product and quantity should be added to the cart
 
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   SubTitle,
@@ -11,11 +11,18 @@ import {
   ProductImage,
   ProductContent,
 } from "../components/StyledComponents";
+import { CartContext } from "../contexts/cart/CartContext";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const [details, setDetails] = useState([]);
+  const { cart, setCart } = useContext(CartContext);
   // const [isLoading, setIsLoading] = useState(false);
+
+  const addToCart = (details) => {
+    setCart(details);
+    console.log(cart);
+  };
 
   useEffect(() => {
     // setIsLoading(true);
@@ -43,7 +50,8 @@ export default function ProductDetails() {
           <p style={{ fontWeight: "bold" }}>Description:</p>
           <p>{details.description}</p>
         </ProductContent>
-        <button>Add to Cart</button>
+        <button onClick={() => addToCart(details)}>Add to Cart</button>
+        {/* <p>{cart.title}</p> */}
       </ProductDetailsBox>
     </>
   );

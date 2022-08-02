@@ -8,9 +8,7 @@ import CartState from "./contexts/cart/CartState";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CartState>
-      <App />
-    </CartState>
+    <App />
   </React.StrictMode>
 );
 

@@ -4,25 +4,18 @@
 // - function to add product to cart
 // - function to remove product from cart
 
-import { createContext, useContext, useReducer } from "react";
-import CartReducer from "./CartReducer";
+import { createContext, useState } from "react";
 
 const CartContext = createContext(null);
 
 const CartProvider = (props) => {
-  const [state, dispatch] = useReducer(CartReducer, {
-    cart: [],
-  });
+  const [cart, setCart] = useState([]);
 
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider value={{ cart, setCart }}>
       {props.children}
     </CartContext.Provider>
   );
 };
 
 export { CartContext, CartProvider };
-
-export const CartState = () => {
-  return useContext(CartContext);
-};

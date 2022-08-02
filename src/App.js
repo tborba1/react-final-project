@@ -15,8 +15,8 @@ function App() {
   return (
     // <ThemeProvider>
     <UserProvider>
-      <BrowserRouter>
-        <CartProvider>
+      <CartProvider>
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<HeaderFooter />}>
               <Route index element={<Home />} />
@@ -35,8 +35,8 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
-        </CartProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </CartProvider>
     </UserProvider>
 
     // </ThemeProvider>
