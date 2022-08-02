@@ -5,12 +5,12 @@
 // - function to remove product from cart
 
 import { createContext, useContext, useReducer } from "react";
-import { cartReducer } from "../contexts/CartReducer";
+import CartReducer from "./CartReducer";
 
 const CartContext = createContext(null);
 
 const CartProvider = (props) => {
-  const [state, dispatch] = useReducer(cartReducer, {
+  const [state, dispatch] = useReducer(CartReducer, {
     cart: [],
   });
 
