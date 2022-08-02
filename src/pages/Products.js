@@ -38,15 +38,6 @@ export default function Products(props) {
     getProducts();
   }, []);
 
-  //     const response = await fetch(url);
-  //     const data = await response.json();
-  //     // console.log(data);
-  //     setProducts(data);
-  //     setIsLoading(false);
-  //     }
-  //     getProducts();
-  // },[]);
-
   const filterProduct = (cat) => {
     const updatedList = products.filter((x) => x.category === cat);
     setFilter(updatedList);
