@@ -1,7 +1,7 @@
 // Display the image, title, and price of all products in a list or grid.
 // When a product is clicked, navigate to the detail page for the selected product.
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   SubTitle,
   ProductContainer,
@@ -12,13 +12,20 @@ import {
 import ProductCard from "../components/ProductCard";
 import { Outlet } from "react-router-dom";
 import Categories from "../components/FilterButtons";
+import { CartContext } from "../contexts/cart/CartContext";
 
 export default function Products(props) {
   const [products, setProducts] = useState([]);
   const [filter, setFilter] = useState(products);
   const [isLoading, setIsLoading] = useState(false);
+  const { cart, setCart } = useContext(CartContext);
   let componentMounted = true;
   // console.log(products);
+
+  const addToCart = (product) => {
+    setCart(product);
+    console.log(cart);
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -29,7 +36,7 @@ export default function Products(props) {
         setProducts(await response.clone().json());
         setFilter(await response.json());
         setIsLoading(false);
-        console.log(filter);
+        // console.log(filter);
       }
 
       return () => {
@@ -47,7 +54,7 @@ export default function Products(props) {
   return (
     <>
       <SubTitle>Products</SubTitle>
-      <Categories />
+      {/* <Categories /> */}
       <FilterContainer>
         <FilterButton onClick={() => setFilter(products)}>All</FilterButton>
         <FilterButton onClick={() => filterProduct("electronics")}>
@@ -74,6 +81,8 @@ export default function Products(props) {
                   price={product.price}
                   image={product.image}
                   id={product.id}
+                  cart={cart}
+                  setCart={setCart}
                 />
               </ProductBox>
             ))

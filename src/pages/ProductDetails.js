@@ -11,18 +11,18 @@ import {
   ProductImage,
   ProductContent,
 } from "../components/StyledComponents";
-import { CartContext } from "../contexts/cart/CartContext";
+// import { CartContext } from "../contexts/cart/CartContext";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const [details, setDetails] = useState([]);
-  const { cart, setCart } = useContext(CartContext);
+  // const { cart, setCart } = useContext(CartContext);
   // const [isLoading, setIsLoading] = useState(false);
 
-  const addToCart = (details) => {
-    setCart(details);
-    console.log(cart);
-  };
+  // const addToCart = (details) => {
+  //   setCart(details);
+  //   console.log(cart);
+  // };
 
   useEffect(() => {
     // setIsLoading(true);
@@ -50,8 +50,9 @@ export default function ProductDetails() {
           <p style={{ fontWeight: "bold" }}>Description:</p>
           <p>{details.description}</p>
         </ProductContent>
-        <button onClick={() => addToCart(details)}>Add to Cart</button>
-        {/* <p>{cart.title}</p> */}
+        {/* <button onClick={() => addToCart([...cart, details])}>
+          Add to Cart
+        </button> */}
       </ProductDetailsBox>
     </>
   );

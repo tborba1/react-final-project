@@ -9,7 +9,7 @@ import { Outlet } from "react-router-dom";
 export default function Categories() {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(categories);
+  // console.log(categories);
 
   useEffect(() => {
     setIsLoading(true);
