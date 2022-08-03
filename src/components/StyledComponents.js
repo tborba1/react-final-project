@@ -109,6 +109,13 @@ export const DetailsButton = styled.button`
   background-color: #c2bb00;
 `;
 
+// Cart
+
+export const CartContent = styled.div`
+  background-color: #edaa25;
+  text-align: left;
+`;
+
 // Login Form
 
 export const FormContainer = styled.div`

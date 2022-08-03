@@ -30,15 +30,6 @@ export default function ProductCard(props) {
       <Link to={`/products/${props.id}`}>
         <DetailsButton>Details</DetailsButton>
       </Link>
-      {cart.includes(props) ? (
-        <button
-          onClick={() => addToCart(cart.filter((c) => c.id !== props.id))}
-        >
-          Remove from Cart
-        </button>
-      ) : (
-        <button onClick={() => addToCart([...cart, props])}>Add to Cart</button>
-      )}
 
       {!isModalOpen ? null : (
         <ProductDetailsModal

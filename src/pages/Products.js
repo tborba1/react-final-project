@@ -84,6 +84,30 @@ export default function Products(props) {
                   cart={cart}
                   setCart={setCart}
                 />
+                {/* <button
+                  onClick={() =>
+                    addToCart(cart.filter((c) => c.id !== product.id))
+                  }
+                >
+                  Remove from Cart
+                </button>
+                <button onClick={() => addToCart([...cart, product])}>
+                  Add to Cart
+                </button> */}
+
+                {cart.includes(product) ? (
+                  <button
+                    onClick={() =>
+                      addToCart(cart.filter((c) => c.id !== product.id))
+                    }
+                  >
+                    Remove from Cart
+                  </button>
+                ) : (
+                  <button onClick={() => addToCart([...cart, product])}>
+                    Add to Cart
+                  </button>
+                )}
               </ProductBox>
             ))
           ) : (
