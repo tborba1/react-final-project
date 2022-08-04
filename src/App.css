@@ -38,3 +38,13 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+}
+
+footer a:hover {
+  background-image: conic-gradient(red, orange,yellow, green, blue, indigo, violet, red);
+}
