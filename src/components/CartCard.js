@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContent } from "./StyledComponents";
+import { CartContent, CartDetails, CartImage } from "./StyledComponents";
 import { CartContext } from "../contexts/cart/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
@@ -14,16 +14,20 @@ export default function CartCard(props) {
 
   return (
     <div>
-      <CartContent key={props.product.id}>
-        <p>Title: {props.product.title}</p>
-        <p>Price: ${props.product.price}</p>
+      <CartDetails key={props.product.id}>
+        <CartImage src={props.product.image} />
+        <CartContent>
+          <p>{props.product.title}</p>
+          <p style={{ paddingLeft: "20px" }}>${props.product.price}</p>
+        </CartContent>
         <FontAwesomeIcon
           icon={faTrashCan}
+          style={{ paddingLeft: "20px", marginTop: "15px" }}
           onClick={() =>
             addToCart(cart.filter((c) => c.id !== props.product.id))
           }
         />
-      </CartContent>
+      </CartDetails>
     </div>
   );
 }

@@ -123,9 +123,32 @@ export const RemoveButton = styled.button`
 
 // Cart
 
+export const CartContainer = styled.div`
+  width: 80%
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+`;
+
+export const CartDetails = styled.div`
+  display: flex;
+  border-bottom: 2px solid lightgrey;
+  padding: 10px;
+`;
+
 export const CartContent = styled.div`
-  background-color: #edaa25;
-  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-right: 50px;
+`;
+
+export const CartImage = styled.img`
+  width: 5vw;
+  padding-right: 15px;
+  border: solid lightgrey;
 `;
 
 export const CartCircle = styled.div`
@@ -156,6 +179,12 @@ export const LoginButton = styled.button`
   background-color: #005e54;
   color: white;
 `;
+
+// export const Colors = {
+//   primary: "",
+//   secondary: "",
+//   button: "",
+// };
 
 /* Color Theme Swatches in Hex 
 color: #003547; dark blue
