@@ -172,11 +172,9 @@ export const CartCircle = styled.div`
 
 export const FormContainer = styled.div`
   background-color: #b7bf99;
-  // width: 50%;
-  // height: 50%;
-  margin-left: 200px;
-  margin-right: 200px;
-  padding: 50px;
+  padding: 20px;
+  width: 30%;
+  margin: auto;
   border: 2px solid black;
 `;
 
@@ -184,6 +182,7 @@ export const LoginButton = styled.button`
   font-family: Nunito;
   background-color: #005e54;
   color: white;
+  margin-top: 5px;
 `;
 
 // export const Colors = {
@@ -198,7 +197,6 @@ color: #005E54; teal
 color: #588157; dark olive green
 color: #C2BB00; dirty lime green
 color: #B7BF99; light dirty lime green
-color: #E1523D; bright red
 color: #C43302; dark red
 color: #ED8B16; tangerine 
 color: #EDAA25; dark tangerine
