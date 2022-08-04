@@ -116,6 +116,17 @@ export const CartContent = styled.div`
   text-align: left;
 `;
 
+export const CartCircle = styled.div`
+  background-color: #ed8b16;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 18px;
+  color: white;
+  padding: 0;
+`;
+
 // Login Form
 
 export const FormContainer = styled.div`
