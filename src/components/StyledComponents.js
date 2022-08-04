@@ -3,13 +3,12 @@ import styled from "styled-components";
 // HeaderFooter
 
 export const Title = styled.h1`
-  background-color: lightgrey;
+  background-color: #003547;
   font-style: italic;
   text-align: center;
-  margin-top: 20px;
-  // margin-left: 32px;
-  // margin-right: 32px;
-  // border-radius: 10px;
+  color: white;
+  margin: 0;
+  padding: 5px;
 `;
 export const SubTitle = styled.h2`
   background-color: lightgrey;

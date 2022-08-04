@@ -13,7 +13,7 @@ export default function HeaderFooter() {
 
   return (
     <>
-      <Title>Fake API Store</Title>
+      <Title>Taryn's Store</Title>
       <NavBar>
         <NavLink route="/" label="Home" />
         <NavLink route="/products" label="Products" />
