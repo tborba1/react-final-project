@@ -3,7 +3,7 @@
 import { Outlet } from "react-router-dom";
 import { CartContainer, SubTitle } from "../components/StyledComponents";
 import { useContext } from "react";
-import { CartContext } from "../contexts/cart/CartContext";
+import { CartContext } from "../contexts/CartContext";
 import CartCard from "../components/CartCard";
 
 export default function Cart() {

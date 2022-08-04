@@ -5,16 +5,13 @@ import React, { useState, useEffect, useContext } from "react";
 import {
   SubTitle,
   ProductContainer,
-  ProductBox,
   FilterButton,
   FilterContainer,
-  AddButton,
-  RemoveButton,
 } from "../components/StyledComponents";
 import ProductCard from "../components/ProductCard";
 import { Outlet } from "react-router-dom";
 import Categories from "../components/FilterButtons";
-import { CartContext } from "../contexts/cart/CartContext";
+import { CartContext } from "../contexts/CartContext";
 
 export default function Products(props) {
   const [products, setProducts] = useState([]);
@@ -23,11 +20,6 @@ export default function Products(props) {
   const { cart, setCart } = useContext(CartContext);
   let componentMounted = true;
   // console.log(products);
-
-  const addToCart = (product) => {
-    setCart(product);
-    console.log(cart);
-  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -77,42 +69,14 @@ export default function Products(props) {
         <ProductContainer>
           {products?.length > 0 ? (
             filter.map((product) => (
-              <ProductBox>
-                <ProductCard
-                  title={product.title}
-                  price={product.price}
-                  image={product.image}
-                  id={product.id}
-                  cart={cart}
-                  setCart={setCart}
-                />
-
-                <AddButton onClick={() => addToCart([...cart, product])}>
-                  Add to Cart
-                </AddButton>
-
-                <RemoveButton
-                  onClick={() =>
-                    addToCart(cart.filter((c) => c.id !== product.id))
-                  }
-                >
-                  Remove from Cart
-                </RemoveButton>
-
-                {/* {cart.includes(product) ? (
-                  <RemoveButton
-                    onClick={() =>
-                      addToCart(cart.filter((c) => c.id !== product.id))
-                    }
-                  >
-                    Remove from Cart
-                  </RemoveButton>
-                ) : (
-                  <AddButton onClick={() => addToCart([...cart, product])}>
-                    Add to Cart
-                  </AddButton>
-                )} */}
-              </ProductBox>
+              <ProductCard
+                title={product.title}
+                price={product.price}
+                image={product.image}
+                id={product.id}
+                cart={cart}
+                setCart={setCart}
+              />
             ))
           ) : (
             <div>No results found.</div>

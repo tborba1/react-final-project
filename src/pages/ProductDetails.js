@@ -10,16 +10,15 @@ import {
   SubTitle,
   ProductDetailsBox,
   ProductImage,
-  ProductContent,
   AddButton,
+  ProductDetailsContent,
 } from "../components/StyledComponents";
-import { CartContext } from "../contexts/cart/CartContext";
+import { CartContext } from "../contexts/CartContext";
 
 export default function ProductDetails() {
   const { id } = useParams();
   const [details, setDetails] = useState([]);
   const { cart, setCart } = useContext(CartContext);
-  const [isLoading, setIsLoading] = useState(false);
 
   const addToCart = (details) => {
     setCart(details);
@@ -27,14 +26,12 @@ export default function ProductDetails() {
   };
 
   useEffect(() => {
-    setIsLoading(true);
     const getDetails = async () => {
       const url = `https://fakestoreapi.com/products/${id}`;
       const response = await fetch(url);
       const data = await response.json();
       // console.log(data);
       setDetails(data);
-      setIsLoading(false);
     };
     getDetails();
   }, [id]);
@@ -45,17 +42,15 @@ export default function ProductDetails() {
       <NavLink route="/products" label="Back to Products" />
       <ProductDetailsBox>
         <ProductImage src={details.image} />
-        <ProductContent>
-          <p>${details.price}</p>
+        <ProductDetailsContent>
+          <p style={{ fontWeight: "bold" }}>${details.price}</p>
           <h3>{details.title}</h3>
-          <p style={{ fontWeight: "bold" }}>Category:</p>
-          <p>{details.category}</p>
-          <p style={{ fontWeight: "bold" }}>Description:</p>
+          <AddButton onClick={() => addToCart([...cart, details])}>
+            Add to Cart
+          </AddButton>
           <p>{details.description}</p>
-        </ProductContent>
-        <AddButton onClick={() => addToCart([...cart, details])}>
-          Add to Cart
-        </AddButton>
+          <p>Category: {details.category}</p>
+        </ProductDetailsContent>
       </ProductDetailsBox>
     </>
   );

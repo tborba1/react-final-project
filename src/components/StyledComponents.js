@@ -73,34 +73,47 @@ export const ProductContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  text-align: center;
 `;
 
 export const ProductBox = styled.div`
-  border: 2px solid black;
-  width: 20%;
+  border: 2px solid lightgrey;
+  width: 50vh;
   margin: 10px;
   padding: 10px;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const ProductDetailsBox = styled.div`
-  border: 2px solid black;
-  width: 50%;
+  border: 2px solid lightgrey;
+  width: 95vw;
+  height: 85vh;
   margin: 10px;
   padding: 10px;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const ProductContent = styled.div`
-  // background-color: #b7bf99;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
+export const ProductDetailsContent = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+`;
+
 export const ProductImage = styled.img`
-  width: 50%;
+  width: 60%;
   height: 100%;
 `;
 
@@ -112,12 +125,6 @@ export const DetailsButton = styled.button`
 export const AddButton = styled.button`
   font-family: Nunito;
   background-color: #588157;
-  color: white;
-`;
-
-export const RemoveButton = styled.button`
-  font-family: Nunito;
-  background-color: #e1523d;
   color: white;
 `;
 

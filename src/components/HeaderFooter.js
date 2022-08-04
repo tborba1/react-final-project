@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import NavLink from "./NavLink";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
-import { CartContext } from "../contexts/cart/CartContext";
+import { CartContext } from "../contexts/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 

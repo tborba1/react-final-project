@@ -9,7 +9,7 @@ import NotFound from "./components/NotFound";
 import Login from "./components/Login";
 import { UserProvider } from "./contexts/UserContext";
 import AuthChecker from "./components/AuthChecker";
-import { CartProvider } from "./contexts/cart/CartContext";
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
   return (
