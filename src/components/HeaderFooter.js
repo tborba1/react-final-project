@@ -24,12 +24,13 @@ export default function HeaderFooter() {
       <Outlet />
       <Footer>
         <p>&copy; 2022 Taryn Borba</p>
-        <a href="https://github.com/tborba1" target="_blank">
+        <a href="https://github.com/tborba1" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faSquareGithub} size="xl" />
         </a>
         <a
           href="https://www.linkedin.com/in/taryn-borba-894280119/"
           target="_blank"
+          rel="noreferrer"
         >
           <FontAwesomeIcon icon={faLinkedin} size="xl" />
         </a>
