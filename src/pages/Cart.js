@@ -12,7 +12,9 @@ export default function Cart() {
   return (
     <>
       <SubTitle>Cart Items</SubTitle>
-      <p>Items in Cart: {cart.length > 0 ? cart.length : 0}</p>
+      <p style={{ textAlign: "center", fontWeight: "bold" }}>
+        Items in Cart: {cart.length > 0 ? cart.length : 0}
+      </p>
 
       {cart.length > 0 ? (
         cart.map((product) => (

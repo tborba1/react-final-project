@@ -109,6 +109,18 @@ export const DetailsButton = styled.button`
   background-color: #c2bb00;
 `;
 
+export const AddButton = styled.button`
+  font-family: Nunito;
+  background-color: #588157;
+  color: white;
+`;
+
+export const RemoveButton = styled.button`
+  font-family: Nunito;
+  background-color: #e1523d;
+  color: white;
+`;
+
 // Cart
 
 export const CartContent = styled.div`
@@ -148,6 +160,7 @@ export const LoginButton = styled.button`
 /* Color Theme Swatches in Hex 
 color: #003547; dark blue
 color: #005E54; teal
+color: #588157; dark olive green
 color: #C2BB00; dirty lime green
 color: #B7BF99; light dirty lime green
 color: #E1523D; bright red

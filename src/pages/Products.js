@@ -8,6 +8,8 @@ import {
   ProductBox,
   FilterButton,
   FilterContainer,
+  AddButton,
+  RemoveButton,
 } from "../components/StyledComponents";
 import ProductCard from "../components/ProductCard";
 import { Outlet } from "react-router-dom";
@@ -84,30 +86,32 @@ export default function Products(props) {
                   cart={cart}
                   setCart={setCart}
                 />
-                {/* <button
+
+                <AddButton onClick={() => addToCart([...cart, product])}>
+                  Add to Cart
+                </AddButton>
+
+                <RemoveButton
                   onClick={() =>
                     addToCart(cart.filter((c) => c.id !== product.id))
                   }
                 >
                   Remove from Cart
-                </button>
-                <button onClick={() => addToCart([...cart, product])}>
-                  Add to Cart
-                </button> */}
+                </RemoveButton>
 
-                {cart.includes(product) ? (
-                  <button
+                {/* {cart.includes(product) ? (
+                  <RemoveButton
                     onClick={() =>
                       addToCart(cart.filter((c) => c.id !== product.id))
                     }
                   >
                     Remove from Cart
-                  </button>
+                  </RemoveButton>
                 ) : (
-                  <button onClick={() => addToCart([...cart, product])}>
+                  <AddButton onClick={() => addToCart([...cart, product])}>
                     Add to Cart
-                  </button>
-                )}
+                  </AddButton>
+                )} */}
               </ProductBox>
             ))
           ) : (
