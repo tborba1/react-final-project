@@ -191,3 +191,13 @@ export const LoginButton = styled.button`
   font-family: Nunito;
   margin-top: 5px;
 `;
+
+// Checkout Form
+
+export const CheckoutContainer = styled.div`
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+`;

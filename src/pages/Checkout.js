@@ -8,16 +8,40 @@
 //      Submit button
 // Submitting the order form should clear the cart and return the user to the main products page
 
-import { Outlet } from "react-router-dom";
-import { CartContainer, SubTitle } from "../components/StyledComponents";
-import { useContext } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import {
+  CartContainer,
+  CheckoutContainer,
+  LoginButton,
+  SubTitle,
+} from "../components/StyledComponents";
+import { useContext, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAddressCard,
+  faCreditCard,
+  faEnvelope,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import CartCard from "../components/CartCard";
 
 export default function Checkout() {
   const { cart, setCart } = useContext(CartContext);
+  const [confirm, setConfirm] = useState(false);
+  const [showOrderError, setShowOrderError] = useState();
+  const navigate = useNavigate();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (cart.length > 0 && confirm === true) {
+      console.log("order submitted");
+      alert("Thank you! Your order has been submitted.");
+      navigate("/products");
+    } else {
+      setShowOrderError(true);
+    }
+  }
 
   return (
     <>
@@ -39,7 +63,62 @@ export default function Checkout() {
           <p style={{ textAlign: "center" }}>Your cart is empty.</p>
         )}
         <p>Cart Total = $</p>
-        <FontAwesomeIcon icon={faCreditCard} />
+
+        <CheckoutContainer>
+          <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
+            <FontAwesomeIcon icon={faEnvelope} />
+            <label for="Email">Email</label>
+            <input name="Email" label="Email" />
+            <br></br>
+            <FontAwesomeIcon icon={faUser} />
+            <label for="Name">Name</label>
+            <input name="Name" label="Name" />
+            <br></br>
+            <FontAwesomeIcon icon={faAddressCard} />
+            <label for="ShippingAddress">Shipping Address</label>
+            <input name="ShippingAddress" label="Shipping Address" />
+            <label>
+              <br></br>
+              <input type="checkbox" name="sameadr" /> Billing Address same as
+              Shipping
+            </label>
+            <br></br>
+            <FontAwesomeIcon icon={faAddressCard} />
+            <label for="BillingAddress">Billing Address</label>
+            <input name="BillingAddress" label="Billing Address" />
+            <br></br>
+            <FontAwesomeIcon icon={faCreditCard} />
+            <label for="ccnum">Credit Card #</label>
+            <input
+              id="ccnum"
+              name="cardnumber"
+              placeholder="1111-2222-3333-4444"
+            />
+            <br></br>
+            <label>
+              <input
+                type="checkbox"
+                name="confirm"
+                value={confirm}
+                onChange={(event) => setConfirm(true)}
+              />{" "}
+              Confirm Order
+            </label>
+            <br></br>
+            <LoginButton type="submit">Submit Order</LoginButton>
+            {showOrderError && (
+              <div
+                style={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  color: "#E1523D",
+                }}
+              >
+                Please complete the order form.
+              </div>
+            )}
+          </form>
+        </CheckoutContainer>
       </CartContainer>
       <Outlet />
     </>
