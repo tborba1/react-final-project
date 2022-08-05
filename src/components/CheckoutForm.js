@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function CheckoutForm() {
-  const { cart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
   const [confirm, setConfirm] = useState(false);
   const [showOrderError, setShowOrderError] = useState();
   const [copyAddress, setCopyAddress] = useState();
@@ -32,9 +32,10 @@ export default function CheckoutForm() {
   function handleSubmit(event) {
     event.preventDefault();
     if (cart.length > 0 && confirm === true) {
-      console.log("order submitted");
-      alert("Thank you! Your order has been submitted.");
+      console.log(`order submitted for ${cart.length} item(s)`);
       navigate("/products");
+      alert("Thank you! Your order has been submitted.");
+      setCart([]);
     } else {
       setShowOrderError(true);
     }

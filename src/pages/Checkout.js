@@ -27,19 +27,17 @@ export default function Checkout() {
       <CartContainer>
         {cart.length > 0 ? (
           cart.map((product) => (
-            <>
-              <CartCard
-                product={product}
-                key={product.id}
-                cart={cart}
-                setCart={setCart}
-              />
-              <CheckoutForm />
-            </>
+            <CartCard
+              product={product}
+              key={product.id}
+              cart={cart}
+              setCart={setCart}
+            />
           ))
         ) : (
           <p style={{ textAlign: "center" }}>Your cart is empty.</p>
         )}
+        <CheckoutForm />
       </CartContainer>
       <Outlet />
     </>
