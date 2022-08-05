@@ -10,7 +10,6 @@ import {
 } from "../components/StyledComponents";
 import ProductCard from "../components/ProductCard";
 import { Outlet } from "react-router-dom";
-import Categories from "../components/FilterButtons";
 import { CartContext } from "../contexts/CartContext";
 
 export default function Products(props) {
@@ -40,7 +39,6 @@ export default function Products(props) {
   return (
     <>
       <SubTitle>Products</SubTitle>
-      {/* <Categories /> */}
       <FilterContainer>
         <FilterButton onClick={() => setFilter(products)}>All</FilterButton>
         <FilterButton onClick={() => filterProduct("electronics")}>
