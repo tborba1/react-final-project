@@ -161,7 +161,8 @@ export const CartContent = styled.div`
 export const CartImage = styled.img`
   width: 5vw;
   padding-right: 15px;
-  border: solid ${Colors.accent};
+  border: 1px solid ${Colors.accent};
+  border-radius: 5px;
 `;
 
 export const CartCircle = styled.div`

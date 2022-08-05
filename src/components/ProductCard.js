@@ -12,8 +12,8 @@ export default function ProductCard(props) {
       <ProductBox>
         <ProductImage src={props.image} />
         <ProductContent>
+          <h4 style={{ marginBottom: "2px" }}>{props.title}</h4>
           <p>${props.price}</p>
-          <h5>{props.title}</h5>
           <Link to={`/products/${props.id}`}>
             <DetailsButton>Details</DetailsButton>
           </Link>

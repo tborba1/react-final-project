@@ -43,8 +43,8 @@ export default function ProductDetails() {
       <ProductDetailsBox>
         <ProductImage src={details.image} />
         <ProductDetailsContent>
+          <h3 style={{ marginBottom: "2px" }}>{details.title}</h3>
           <p style={{ fontWeight: "bold" }}>${details.price}</p>
-          <h3>{details.title}</h3>
           <AddButton onClick={() => addToCart([...cart, details])}>
             Add to Cart
           </AddButton>
