@@ -5,6 +5,7 @@ import {
   SubTitle,
 } from "../components/StyledComponents";
 import { Outlet } from "react-router-dom";
+import titleCase from "../components/TitleCase";
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
@@ -34,7 +35,7 @@ export default function Categories() {
               <>
                 <CategoryBox>
                   <div>
-                    <h3>{category}</h3>
+                    <p>{titleCase(category)}</p>
                   </div>
                 </CategoryBox>
               </>
