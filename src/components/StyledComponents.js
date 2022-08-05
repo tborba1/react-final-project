@@ -1,38 +1,46 @@
 import styled from "styled-components";
 
+/* Colors
+color: #C2BB00; dark lime green - for active page link and CartCircle
+color: #003547; dark blue - for Title and Footer background
+color: #005E54; teal - for NavBar
+*/
+
+export const Colors = {
+  active: "#C2BB00",
+  main: "#003547",
+  nav: "#005E54",
+  accent: "lightgrey",
+};
+
 // HeaderFooter
 
 export const Title = styled.h1`
-  background-color: #003547;
-  font-style: italic;
+  background-color: ${Colors.main};
   text-align: center;
   color: white;
   margin: 0;
   padding: 5px;
 `;
 export const SubTitle = styled.h2`
-  background-color: lightgrey;
-  font-style: italic;
+  background-color: ${Colors.accent};
   text-align: center;
-  margin-top: 20px;
-  // margin-left: 32px;
-  // margin-right: 32px;
-  // border-radius: 10px;
+  margin: 0;
+  margin-bottom: 20px;
 `;
 
 export const NavBar = styled.nav`
-  background-color: #005e54;
+  background-color: ${Colors.nav};
   display: flex;
   justify-content: center;
 `;
 
 export const HeaderLink = styled.div`
   margin: 18px 24px;
-  // color: white;
 `;
 
 export const Footer = styled.footer`
-  background-color: #003547;
+  background-color: ${Colors.main};
   color: white;
   text-align: center;
   font-weight: bold;
@@ -46,7 +54,8 @@ export const CategoryContainer = styled.div`
 `;
 
 export const CategoryBox = styled.div`
-  border: 2px solid black;
+  border: 1px solid ${Colors.accent};
+  border-radius: 5px;
   width: 10%;
   margin: 10px;
   text-align: center;
@@ -62,7 +71,6 @@ export const FilterContainer = styled.div`
 export const FilterButton = styled.button`
   margin: 10px;
   font-family: Nunito;
-  background-color: #ed8b16;
 `;
 
 // Products
@@ -75,7 +83,8 @@ export const ProductContainer = styled.div`
 `;
 
 export const ProductBox = styled.div`
-  border: 2px solid lightgrey;
+  border: 1px solid ${Colors.accent};
+  border-radius: 5px;
   width: 50vh;
   margin: 10px;
   padding: 10px;
@@ -86,7 +95,8 @@ export const ProductBox = styled.div`
 `;
 
 export const ProductDetailsBox = styled.div`
-  border: 2px solid lightgrey;
+  border: 1px solid ${Colors.accent};
+  border-radius: 5px;
   width: 95vw;
   height: 85vh;
   margin: 10px;
@@ -118,13 +128,10 @@ export const ProductImage = styled.img`
 
 export const DetailsButton = styled.button`
   font-family: Nunito;
-  background-color: #c2bb00;
 `;
 
 export const AddButton = styled.button`
   font-family: Nunito;
-  background-color: #588157;
-  color: white;
 `;
 
 // Cart
@@ -140,7 +147,7 @@ export const CartContainer = styled.div`
 
 export const CartDetails = styled.div`
   display: flex;
-  border-bottom: 2px solid lightgrey;
+  border-bottom: 2px solid ${Colors.accent};
   padding: 10px;
 `;
 
@@ -154,13 +161,14 @@ export const CartContent = styled.div`
 export const CartImage = styled.img`
   width: 5vw;
   padding-right: 15px;
-  border: solid lightgrey;
+  border: solid ${Colors.accent};
 `;
 
 export const CartCircle = styled.div`
-  background-color: #ed8b16;
-  width: 20px;
-  height: 20px;
+  background-color: ${Colors.active};
+  font-weight: bold;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   text-align: center;
   margin: 18px;
@@ -171,33 +179,14 @@ export const CartCircle = styled.div`
 // Login Form
 
 export const FormContainer = styled.div`
-  background-color: #b7bf99;
   padding: 20px;
   width: 30%;
   margin: auto;
-  border: 2px solid black;
+  border: 1px solid black;
+  border-radius: 5px;
 `;
 
 export const LoginButton = styled.button`
   font-family: Nunito;
-  background-color: #005e54;
-  color: white;
   margin-top: 5px;
 `;
-
-// export const Colors = {
-//   primary: "",
-//   secondary: "",
-//   button: "",
-// };
-
-/* Color Theme Swatches in Hex 
-color: #003547; dark blue
-color: #005E54; teal
-color: #588157; dark olive green
-color: #C2BB00; dirty lime green
-color: #B7BF99; light dirty lime green
-color: #C43302; dark red
-color: #ED8B16; tangerine 
-color: #EDAA25; dark tangerine
-*/
