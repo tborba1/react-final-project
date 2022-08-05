@@ -15,7 +15,7 @@ import {
   LoginButton,
   SubTitle,
 } from "../components/StyledComponents";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -30,7 +30,20 @@ export default function Checkout() {
   const { cart, setCart } = useContext(CartContext);
   const [confirm, setConfirm] = useState(false);
   const [showOrderError, setShowOrderError] = useState();
+  const [copyAddress, setCopyAddress] = useState();
+  const [billingAddress, setBillingAddress] = useState();
+  const [shippingAddress, setShippingAddress] = useState();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (copyAddress) {
+      setBillingAddress(shippingAddress);
+    }
+  }, [copyAddress, setBillingAddress, shippingAddress]);
+
+  function toggleShippingToBilling() {
+    setCopyAddress(!copyAddress);
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -67,28 +80,43 @@ export default function Checkout() {
         <CheckoutContainer>
           <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
             <FontAwesomeIcon icon={faEnvelope} />
-            <label for="Email">Email</label>
+            <label htmlFor="Email">Email</label>
             <input name="Email" label="Email" />
             <br></br>
             <FontAwesomeIcon icon={faUser} />
-            <label for="Name">Name</label>
+            <label htmlFor="Name">Name</label>
             <input name="Name" label="Name" />
             <br></br>
             <FontAwesomeIcon icon={faAddressCard} />
-            <label for="ShippingAddress">Shipping Address</label>
-            <input name="ShippingAddress" label="Shipping Address" />
+            <label htmlFor="ShippingAddress">Shipping Address</label>
+            <input
+              name="ShippingAddress"
+              label="Shipping Address"
+              value={shippingAddress}
+              onChange={(e) => setShippingAddress(e.target.value)}
+            />
             <label>
               <br></br>
-              <input type="checkbox" name="sameadr" /> Billing Address same as
-              Shipping
+              <input
+                type="checkbox"
+                name="sameadr"
+                onChange={toggleShippingToBilling}
+              />{" "}
+              Check here if shipping and billing addresses are the same.
             </label>
             <br></br>
             <FontAwesomeIcon icon={faAddressCard} />
-            <label for="BillingAddress">Billing Address</label>
-            <input name="BillingAddress" label="Billing Address" />
+            <label htmlFor="BillingAddress">Billing Address</label>
+            <input
+              name="BillingAddress"
+              label="Billing Address"
+              value={billingAddress}
+              disabled={copyAddress}
+              onChange={(e) => setBillingAddress(e.target.value)}
+            />
             <br></br>
             <FontAwesomeIcon icon={faCreditCard} />
-            <label for="ccnum">Credit Card #</label>
+            <label htmlFor="ccnum">Credit Card #</label>
             <input
               id="ccnum"
               name="cardnumber"

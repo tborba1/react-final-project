@@ -196,8 +196,9 @@ export const LoginButton = styled.button`
 
 export const CheckoutContainer = styled.div`
   padding: 20px;
-  width: 50%;
+  width: 55%;
   margin: auto;
-  border: 1px solid black;
   border-radius: 5px;
+  background-color: ${Colors.accent};
+  border: 1px solid black;
 `;
