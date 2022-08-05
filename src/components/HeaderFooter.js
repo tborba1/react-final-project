@@ -20,6 +20,7 @@ export default function HeaderFooter() {
         <NavLink route="/cart" label="Cart" />
         <CartCircle>{cart.length}</CartCircle>
         {!loggedInUser && <NavLink route="/login" label="Login" />}
+        {loggedInUser && <NavLink route="/checkout" label="Checkout" />}
       </NavBar>
       <Outlet />
       <Footer>

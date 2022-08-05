@@ -17,7 +17,7 @@ export default function CartCard(props) {
       <CartDetails key={props.product.id}>
         <CartImage src={props.product.image} />
         <CartContent>
-          <p>{props.product.title}</p>
+          <p style={{ textAlign: "left" }}>{props.product.title}</p>
           <p style={{ paddingLeft: "20px" }}>${props.product.price}</p>
         </CartContent>
         <FontAwesomeIcon

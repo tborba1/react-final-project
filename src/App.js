@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import NotFound from "./components/NotFound";
 import Login from "./components/Login";
 import { UserProvider } from "./contexts/UserContext";
@@ -30,7 +31,7 @@ function App() {
                   </AuthChecker>
                 }
               />
-              {/* <Route path="/checkout" element={<Checkout />} />  */}
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/login" element={<Login />} />
               <Route path="*" element={<NotFound />} />
             </Route>
