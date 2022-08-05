@@ -33,9 +33,7 @@ export default function Login() {
 
   return (
     <>
-      <SubTitle style={{ textAlign: "center", fontWeight: "bold" }}>
-        Login Page
-      </SubTitle>
+      <SubTitle>Login Page</SubTitle>
       <FormContainer>
         <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
           <label for="Email">Email</label>

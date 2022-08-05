@@ -23,7 +23,7 @@ export default function HeaderFooter() {
       </NavBar>
       <Outlet />
       <Footer>
-        <p>&copy; 2022 Taryn Borba</p>
+        <p style={{ marginBottom: "5px" }}>&copy; 2022 Taryn Borba</p>
         <a href="https://github.com/tborba1" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faSquareGithub} size="xl" />
         </a>

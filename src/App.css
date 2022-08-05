@@ -44,7 +44,3 @@ footer a {
   text-decoration: none;
   margin: 5px;
 }
-
-footer a:hover {
-  background-image: conic-gradient(red, orange,yellow, green, blue, indigo, violet, red);
-}
