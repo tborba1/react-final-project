@@ -18,25 +18,17 @@ export default function Products(props) {
   const [filter, setFilter] = useState(products);
   const [isLoading, setIsLoading] = useState(false);
   const { cart, setCart } = useContext(CartContext);
-  let componentMounted = true;
-  // console.log(products);
 
   useEffect(() => {
     setIsLoading(true);
     const getProducts = async () => {
       const url = `https://fakestoreapi.com/products`;
       const response = await fetch(url);
-      if (componentMounted) {
-        setProducts(await response.clone().json());
-        setFilter(await response.json());
-        setIsLoading(false);
-        // console.log(filter);
-      }
-
-      return () => {
-        componentMounted = false;
-      };
+      setProducts(await response.clone().json());
+      setFilter(await response.json());
+      setIsLoading(false);
     };
+
     getProducts();
   }, []);
 
